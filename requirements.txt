@@ -1,0 +1,18 @@
+flask==3.0.2
+Werkzeug==3.0.1
+langchain==0.0.184
+PyPDF2==3.0.1
+streamlit==1.18.1
+openai==0.27.6
+faiss-cpu==1.7.4
+altair==4
+tiktoken==0.4.0
+wget==3.2
+#pip install chromadb
+#pip install pypdf
+python-docx==0.8.11  # python-docx for DOCX processing
+pytesseract==0.3.8 
+PyMuPDF==1.24.0
+embeddings==0.0.8
+
+

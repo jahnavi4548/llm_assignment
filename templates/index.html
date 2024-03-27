@@ -1,0 +1,36 @@
+<!--
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PDF Summarizer</title>
+</head>
+<body>
+    <h1>PDF Summarizer</h1>
+    <form action="http://127.0.0.1:5000/summarize" method="post" enctype="multipart/form-data">
+        <input type="file" name="pdf_file">
+        <input type="submit" value="Upload PDF and Summarize">
+    </form>
+</body>
+</html>
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Summarizer and Question Answering System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Welcome to Text Summarizer and Question Answering System</h1>
+    <p>This application allows you to upload a file and summarize its contents, or ask questions related to the uploaded document.</p>
+    <p>Click on the buttons below to get started:</p>
+    <div class="button-container">
+      <a href="/upload" class="btn">Upload PDF File</a>
+      <a href="/ask_question" class="btn">Ask Question</a>
+</body>
+</html>
+
+
+

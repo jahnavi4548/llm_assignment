@@ -9,12 +9,27 @@ from langchain.llms import OpenAI
 from langchain.text_splitter import CharacterTextSplitter
 import fitz  # PyMuPDF
 import os
+import yaml
 
 app = Flask(__name__)
-app.secret_key = os.urandom(24)   # Set a secret key for session management
+
+def load_config():
+    with open('config.yaml', 'r') as config_file:
+        config = yaml.safe_load(config_file)
+    return config
+
+config = load_config()
+
+# Access the secret key
+secret_key = config['app']['secret_keys']
+
+# Access the OpenAPI key
+openapi_key = config['openapi']['api_key']
+
+app.secret_key = secret_key
 
 # Set OpenAI API key from environment variable
-os.environ["OPENAI_API_KEY"] = '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'
+os.environ["OPENAI_API_KEY"] = openapi_key
 
 @app.route("/")
 def home():
@@ -79,6 +94,8 @@ def ask_question():
             return jsonify({"error": f"Error during summarization: {e}"}), 500
 
     return render_template("ask_question.html")
+
+
 
 def extract_text_from_file(file_path):
     _, file_extension = os.path.splitext(file_path)
